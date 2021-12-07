@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Turkey : MonoBehaviour
 {
-    static private Turkey S;
     private AudioSource m_AudioSource;
+    static public bool turkeySound;
 
     private void Start()
     {
-        S = this;
         m_AudioSource = GetComponent<AudioSource>();
         PlayTurkeySound();
+        
     }
-
-    public static void PlayTurkeySound()
+    private void Update()
     {
-        S.m_AudioSource.Play();
+        if (turkeySound)
+        {
+            PlayTurkeySound();
+            turkeySound = false;
+        }
+    }
+    void PlayTurkeySound()
+    {
+        m_AudioSource.Play();
     }
 }

@@ -30,7 +30,7 @@ public class CrowCall : MonoBehaviour
         else
         {
             animator.SetBool("Called", false);
-            Turkey.PlayTurkeySound();
+            Turkey.turkeySound = true;
         }
 
     }
